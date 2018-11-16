@@ -6,4 +6,4 @@ featured_image = ""
 description = ""
 +++
 
-# My first hugo!
+Don't actually need a header as it already adds one in.
