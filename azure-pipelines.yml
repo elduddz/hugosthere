@@ -21,6 +21,6 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-  su - azureagent
-  docker --version
-displayName: 'wibble test'
+    su - azureagent
+    docker --version
+  displayName: 'wibble test'
