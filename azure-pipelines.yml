@@ -12,19 +12,23 @@ resources:
 trigger:
 - master
 
-steps:
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
-    
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- script: |
-    docker --version
-  displayName: 'wibble test'
+jobs:
+-job: test
+  container: node
+  steps:
+  - script: yarn install
+  - script: yarn run test
+- job: run
+  steps:
+  - task: DockerInstaller@0
+    inputs:
+      dockerVersion: '17.09.0-ce'
+  - script: echo Hello, world!
+    displayName: 'Run a one-line script'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
+  - script: |
+      docker --version
+    displayName: 'wibble test'
