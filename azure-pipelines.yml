@@ -13,12 +13,14 @@ trigger:
 - master
 
 jobs:
-- job: test
-  container: node
+- job: setup
   steps:
   - task: DockerInstaller@0
     inputs:
       dockerVersion: '17.09.0-ce'  
+- job: test
+  container: node
+  steps:
   - script: yarn install
   - script: yarn run test
 - job: run
