@@ -13,7 +13,7 @@ trigger:
 - master
 
 jobs:
--job: test
+- job: test
   container: node
   steps:
   - script: yarn install
