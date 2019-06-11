@@ -13,9 +13,9 @@ trigger:
 - master
 
 steps:
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
+#- task: DockerInstaller@0
+#  inputs:
+#    dockerVersion: '17.09.0-ce'
     
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
