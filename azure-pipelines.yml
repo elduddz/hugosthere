@@ -16,6 +16,9 @@ jobs:
 - job: test
   container: node
   steps:
+  - task: DockerInstaller@0
+    inputs:
+      dockerVersion: '17.09.0-ce'  
   - script: yarn install
   - script: yarn run test
 - job: run
