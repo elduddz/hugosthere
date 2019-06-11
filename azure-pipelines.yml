@@ -16,8 +16,9 @@ jobs:
 - job: test
   container: node
   steps:
-  - script: yarn install
-  - script: yarn run test
+  - script: |
+      yarn install
+      yarn run test
 - job: run
   steps:
   - task: DockerInstaller@0
